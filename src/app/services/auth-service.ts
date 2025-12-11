@@ -1,25 +1,30 @@
-import { Injectable } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { map, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  loggedIn: boolean = false;
-
-  login() {
-    this.loggedIn = true;
-    sessionStorage.setItem('token','senha');
+  private router = inject(Router)
+  private http = inject(HttpClient);
+  login(email: string, senha: string): Observable<boolean> {
+    return this.http.get<any[]>(`http://localhost:3000/usuarios?email=${email}&senha=${senha}`)
+    .pipe(
+        map(usuarios => {
+          if (usuarios.length > 0) {
+            localStorage.setItem('token', 'token-valido-123');
+            return true;
+          }
+          return false;
+        })
+      )
   }
-
-  logout(){
-    this.loggedIn = false;
-    sessionStorage.clear();
-  }
-
-  estalogado(): boolean{
-     return this.loggedIn || !!sessionStorage.getItem ("token");
-  }
-   
-  
+logout() {
+  localStorage.removeItem('token')
+  this.router.navigate(['/login']);
 }
-
+estaLogado(): boolean {
+  return !!sessionStorage.getItem('token')
+}
+}

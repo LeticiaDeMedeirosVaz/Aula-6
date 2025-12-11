@@ -1,0 +1,30 @@
+{
+    "usuarios": [
+        {
+            "id": "1",
+            "email": "admin@gmai.com",
+            "senha": "123456",
+            "nome": "admin"
+        }
+    ],
+    "tarefas": [
+        {
+            "id": "1",
+            "titulo": "Notebook",
+            "data": "10/12/2025",
+            "concluida": true
+        },
+        {
+            "id": "2",
+            "titulo": "teclado",
+            "data": "07/12/2025",
+            "concluida": false
+        },
+        {
+            "id": "7",
+            "titulo": "mouse",
+            "data": "03/01/2028",
+            "concluida": true
+        }
+    ]
+}

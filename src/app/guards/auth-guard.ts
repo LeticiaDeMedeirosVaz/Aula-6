@@ -10,7 +10,7 @@ export const authGuard: CanActivateFn = (route, state) => {
   const authService = inject(AuthService);
   const router = inject(Router);
 
-  if(authService.estalogado()){
+  if(authService.estaLogado()){
     return true;
   } else {
     alert("Acesso negado! Faça login primeiro.");
