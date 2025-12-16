@@ -1,14 +1,140 @@
-.btn-gradient {
-  padding: 12px 28px;
-  border-radius: 8px;
-  background: linear-gradient(45deg, #ff8a00, #e52e71);
-  color: #fff;
-  font-weight: 700;
+.p {
+  font-weight: 1500;
+  color:#233b6b;
+  align-items: center;
+}
+
+
+.login-container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #002400, #287264, #80c98a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+
+p-card {
+  width: 420px;
+  padding: 35px 30px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; 
+  padding: 0;
+}
+
+.p-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5 rem; 
+}
+
+.erro {
+  color: #750907;
+  font-size: 0.75rem;
+}
+
+
+.btn-container {
+  padding: 10px 22px;
+  font-size: 0.95rem;
+  min-width: 160px;
+  max-width: 200px;
+  margin: 3rem auto 0;
   border: none;
   cursor: pointer;
   transition: opacity .2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #b3f0b3, #f7fcf8);
+  border-radius: 8px;
 
-  &:hover {
+    &:hover {
     opacity: 0.85;
   }
 }
+
+a {
+  display: block;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+input,
+.p-inputtext {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #15055c;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  background-color: #fff;
+}
+
+
+
+input,
+.p-password {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #15055c;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  background-color: #fff;
+}
+
+
+.login-header {
+
+  display: flex;
+  flex-direction: column;   
+  align-items: center;      
+  gap: 8px;                
+  text-align: center;      
+  padding-top: 8px;        
+  background: linear-gradient(135deg, #e6eceb, #f3f3f3);
+
+}
+
+.login-header-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.welcome-title {
+  margin: 0;
+  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+  align-items: center;
+  color:#153a20
+
+}
+
+.login-footer {
+  margin-top: 0rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  text-align: center; 
+  justify-content: center;
+  background-color: #d6e0de;  
+}
+

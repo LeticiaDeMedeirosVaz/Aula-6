@@ -10,6 +10,10 @@
           "style": "scss"
         }
       },
+      "styles": [
+         "node_modules/primeicons/primeicons.css",
+          "src/styles.css"
+      ],
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",

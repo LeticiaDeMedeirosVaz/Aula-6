@@ -29,4 +29,11 @@ export class Services {
   remover(id: string): Observable<void>{
     return this.http.delete<void>('${this.apiUrl}/${id}') 
   }
+
+  atualizar(tarefa: Tarefa, concluida: boolean): Observable<Tarefa>{
+    return this.http.put<Tarefa>(`${this.apiUrl}/${tarefa.id}`,{
+      ...tarefa,
+      concluida
+    });
+  }
 }

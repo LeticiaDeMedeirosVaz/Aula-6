@@ -1,27 +1,44 @@
+
+<div class="login-page">
+   <header class="login-header">
+    <h1 class="welcome-title">
+      <span class="welcome-gradient">Bem vindo!!!</span>
+    </h1>
+</header
+>
+
 <div class="login-container">
-    <p-card header="Acesso ao Sistema" styleClass="p-shadow-4 login-card">
+    <p-card header="" styleClass="p-shadow-4 login-card">
         <form [formGroup]="formLogin" (ngSubmit)="Entrar()">
             <div class="p-field">
                 <label for="email">Email</label>
-                <input id="email" type="email" pInputText formControlName="email" placeholder="Digite seu email" />
+                <input id="email" type="email" pInputText formControlName="email" placeholder="Digite seu email..." />
                 <small class="erro" *ngIf="formLogin.get('email')?.touched && formLogin.get('email')?.invalid">
                     Email obrigatório e válido.
                 </small>
             </div>
             <div class="p-field">
                 <label for="senha">Senha</label>
-                <p-password id="senha" formControlName="senha" placeholder="Digite sua senha" [feedback]="false">
-                </p-password>
+                <p-password id="senha" formControlName="senha" placeholder="Digite sua senha..." [feedback]="false"></p-password>
                 <small class="erro" *ngIf="formLogin.get('senha')?.touched && formLogin.get('senha')?.invalid">
                     A senha deve conter pelo menos 6 caracteres.
                 </small>
             </div>
             <div class="btn-container">
-                <p-button label="Entrar" icon="pi pi-sign-in" styleClass="p-button-primary w-full" type="submit">
-                </p-button>
+                <a routerLink="/lista">Faça seu login</a> 
             </div>
         </form>
     </p-card>
+</div>
+
+
+<div>
+  <footer class="login-footer">
+    <p class="no-access-text">
+    <span aria-hidden="true">👉</span> Não tem acesso ainda?
+    </p>
+    <a routerLink="/register" class="cta-link">Cadastre-se</a>
+  </footer>
 </div>
 
  

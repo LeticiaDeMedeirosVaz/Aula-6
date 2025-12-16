@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { AuthService } from '../services/auth-service';
-import {Router} from '@angular/router'
+import { Router, RouterLink } from '@angular/router'
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { InputTextModule } from 'primeng/inputtext';
@@ -11,7 +11,7 @@ import {PasswordModule} from 'primeng/password'
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, CommonModule, InputTextModule, PasswordModule, ButtonModule, CardModule,],
+  imports: [ReactiveFormsModule, CommonModule, InputTextModule, PasswordModule, ButtonModule, CardModule, RouterLink],
   templateUrl: './login.html',
   styleUrl: './login.scss',
 })

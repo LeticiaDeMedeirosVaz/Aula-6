@@ -4,8 +4,11 @@ import { Login } from './Componentes/login';
 import { Dashboard } from './Componentes/meus-componentes/dashboard';
 import { authGuard } from './guards/auth-guard';
 import { Lista } from './Componentes/lista/lista';
+import { Register } from './Componentes/meus-componentes/register/register';
 
 export const routes: Routes = [
+    
+
     {
         path: '',
         redirectTo: 'login',
@@ -15,6 +18,10 @@ export const routes: Routes = [
         path: 'login',
         component: Login,
         
+    },
+    {
+        path: 'register',
+        component: Register,
     },
     {
         path: 'home',
