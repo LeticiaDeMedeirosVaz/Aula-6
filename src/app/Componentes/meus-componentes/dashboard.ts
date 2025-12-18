@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
-import {CdkDragDrop, DragDropModule, moveItemInArray} from '@angular/cdk/drag-drop'
+import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
+import {CdkDragDrop, DragDropModule, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop'
 import { Services, Tarefa } from '../../services/lista/services';
 
 
@@ -17,11 +17,13 @@ export class Dashboard implements OnInit{
   done: Tarefa[] = [];
 
   private service = inject(Services);
+  private cdr = inject(ChangeDetectorRef);
 
   ngOnInit() {
     this.service.listar().subscribe(tarefas => {
       this.todo = tarefas.filter(t => !t.concluida);
       this.done = tarefas.filter(t => t.concluida);
+      this.cdr.detectChanges();
     })
     
   }
@@ -35,6 +37,19 @@ export class Dashboard implements OnInit{
     const tarefa = event.previousContainer.data[event.previousIndex];
     const concluida = event.container.id === 'done';
 
+    transferArrayItem(
+      event.previousContainer.data,
+      event.container.data,
+      event.previousIndex,
+      event.currentIndex
+    );
 
+    tarefa.concluida = concluida;
+    this.service.atualizar(tarefa,concluida).subscribe();
+    
+  }
+
+  trackById(index: number, item: Tarefa){
+    return item.id;
   }
 }

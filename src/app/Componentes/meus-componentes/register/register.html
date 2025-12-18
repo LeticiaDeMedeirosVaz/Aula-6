@@ -40,13 +40,13 @@
 
   
       <div class="input-group">
+        <i class="pi pi-user"></i>
         <input
+          pInputText
           type="email"
-          id="email"
-          required
-        />
-        <label for="email">Email</label>
-        <span class="line"></span>
+          formControlName="email"
+          placeholder="Email"/>
+          <span class="line"></span>
       </div>
 
 
@@ -60,34 +60,27 @@
         <span class="line"></span>
       </div>
 
-   
-      <div class="input-group">
-        <input
-          type="password"
-          id="senha"
-          required
-        />
-        <label for="senha">Senha</label>
-        <span class="line"></span>
-        <i class="eye-icon">👁</i>
-      </div>
+   <div class="input-group">
+          <i class="pi pi-lock"></i>
+          <p-password
+            formControlName="senha"
+            placeholder="Insira sua senha"
+            [feedback]="false"
+            [toggleMask]="false">
+             <i class="eye-icon">👁</i>
+             <span class="line"></span>
+          </p-password>
+        </div>
+
+      
 
      
-      <div class="input-group">
-        <input
-          type="password"
-          id="confirmarSenha"
-          required
-        />
-        <label for="confirmarSenha">Confirmar Senha</label>
-        <span class="line"></span>
-        <i class="eye-icon">👁</i>
-      </div>
+      <div class ="btn-register">
 
-      <button type="submit" class="btn-register">
-        cadastrar
+      <form [formGroup]="formRegister" (ngSubmit)="cadastrar()">Cadastre-se</form>  
+      <button type="submit">
       </button>
-
+      </div>  
     </form>
 
   </div>

@@ -6,9 +6,7 @@ import { map, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  register(value: Partial<{ email: string | null; senha: string | null; }>) {
-    throw new Error('Method not implemented.');
-  }
+ 
   private router = inject(Router)
   private http = inject(HttpClient);
   private apiUrl= 'http://localhost:3000/usuarios'
@@ -34,7 +32,7 @@ estaLogado(): boolean {
   return !!sessionStorage.getItem('token')
 }
 
-Register(usuario: any): Observable<any>{
+register(usuario: any): Observable<any>{
   return this.http.post(`${this.apiUrl}/usuario`,usuario)
 
 }

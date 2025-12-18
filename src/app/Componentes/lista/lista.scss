@@ -1,0 +1,76 @@
+
+.container {
+  padding: 2rem;
+  background-color: #e8f5e9;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  color: #1b5e20;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+input[pInputText] {
+  width: 100%;
+  border: 1px solid #66bb6a;
+  border-radius: 6px;
+  padding: 0.6rem;
+}
+
+input[pInputText]:focus {
+  outline: none;
+  border-color: #2e7d32;
+  box-shadow: 0 0 5px rgba(46, 125, 50, 0.4);
+}
+
+
+p-button {
+  margin-left: 0.5rem;
+}
+
+
+table {
+  width: 100%;
+  margin-top: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+
+th.mat-header-cell {
+  background-color: #2e7d32;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+
+td.mat-cell {
+  color: #1b5e20;
+}
+
+
+tr.mat-row:hover {
+  background-color: #e8f5e9;
+}
+
+
+p-button[severity="danger"] {
+  background-color: #c62828;
+  border: none;
+}
+
+p-button[severity="danger"]:hover {
+  background-color: #b71c1c;
+}
